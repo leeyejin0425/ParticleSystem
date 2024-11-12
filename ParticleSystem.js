@@ -1,6 +1,6 @@
 class ParticleSystem{
 
-    
+
     constructor(position){
         this.origin = position.copy();
         this.particles = [];
@@ -10,6 +10,12 @@ class ParticleSystem{
     addParticle(){
         this.particles.push(new Particle(this.origin));
 
+    }
+
+    applyGravity(g) {
+        for (let p of this.particles){
+            p.applyForce(g);
+        }
     }
 
     run(){
