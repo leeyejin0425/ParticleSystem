@@ -13,9 +13,20 @@ class ParticleSystem{
     }
 
     applyGravity(g) {
+        // for (let p of this.particles){
+        //     p.applyForce(g);
+        // } 효율적 리팩토링. 중복코드 간략히 
+
+        this.applyForce(g);
+    }
+
+    applyForce(force){
         for (let p of this.particles){
-            p.applyForce(g);
+
+            p.applyForce(force);
         }
+
+
     }
 
     run(){
